@@ -27,7 +27,7 @@ def process():
     for card in cards:
         missingCards = card.get_required_upgrade_cards(card.get("level"), int(targetlevel), card.get("count"), card.get("rarity"))
         missingGold = card.get_required_upgrade_cost(card.get("level"), int(targetlevel), 0, card.get("rarity"))
-        maxUpgradeLevel = card.get_max_possible_upgrade_level()
+        maxUpgradeLevel, remainingCards = card.get_max_possible_upgrade_level()
         imgpath = "res/"+card.name+".png"
         rarityColor = "#FFFFFF"
         if card.get("rarity") == "common": # light blue
@@ -51,7 +51,8 @@ def process():
              "missingGold":missingGold,
              "image_path": imgpath,
              "rarityColor": rarityColor,
-             "maxUpgradeLevel":maxUpgradeLevel
+             "maxUpgradeLevel":maxUpgradeLevel,
+             "remainingCards":remainingCards
              })
 
     clan = "*no clan*"

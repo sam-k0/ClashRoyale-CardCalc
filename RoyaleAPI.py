@@ -180,7 +180,7 @@ class Card():
                 break
             maxLevel += 1
 
-        return maxLevel
+        return maxLevel, abs(totalCards)
     
 
 
