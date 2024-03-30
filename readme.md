@@ -2,7 +2,10 @@
 
 This tool allows you to easily calculate how many cards and gold you need to upgrade a card to a specific level.
 Simply enter your player tag and the target level you want to reach and the tool will do the rest.
-If an error occurs, please make sure you did not confuse the letter "O" with the number "0" zero.
+
+![image](https://raw.githubusercontent.com/sam-k0/ClashRoyale-py/master/readme/img.png?token=GHSAT0AAAAAACQJFACQGZCQASW5FSEGPSDGZQIESJQ)
+
+![image](https://raw.githubusercontent.com/sam-k0/ClashRoyale-py/master/readme/img1.png?token=GHSAT0AAAAAACQJFACR327GFIT24UZCJJCQZQIETLA)
 
 # Requirements
 - flask
