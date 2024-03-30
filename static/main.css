@@ -1,5 +1,19 @@
 /* styles.css */
 
+.page-header {
+    text-align: center;
+}
+
+/* Center the information text */
+.information-text {
+    text-align: center;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 5%;
+    font-size: large;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -78,6 +92,11 @@ input[type="submit"]:hover {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.card:hover {
+    -webkit-transform: scale(1.008) translateZ(0);
+    box-shadow: 0px 0px 10px 5px #000000;
+}
+
 .card-image-container {
     width: 10%; /* Set width of image container */
 }
@@ -86,33 +105,37 @@ input[type="submit"]:hover {
     height: auto; /* Maintain aspect ratio */
     display: block; /* Ensure proper alignment */
 }
+
 .card-details {
     flex: 1; /* Expand to fill remaining space */
+    padding-left: 10px; /* Add padding to separate from image */
+    margin-right: 50%;
+    display: flex; /* Use flexbox */
+    flex-direction: row; /* Stack child elements */
+    align-items: center; /* Center child elements vertically */
+    justify-content: space-between; /* Distribute space between elements */
 }
+
+.card-details-element {
+    margin-right: 10px; /* Add margin between elements */
+}
+
 .card-name {
     font-weight: bold;
+    font-size: large;
     color: #333; /* Dark color for card name */
 }
 .card-level {
     font-style: italic;
     color: #888; /* Lighter color for card level */
 }
-.card-description {
-    color: #555; /* Color for card description */
-}
 .card-rarity {
     color: #ff9800; /* Orange color for card rarity */
 }
-
-.card-description-list {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
+.card-upgrade-cards-needed {
+    color: #000000; /* Color for card description */
 }
-.card-description-item {
-    margin-bottom: 5px; /* Add margin between items */
-    color: #555; /* Color for card description */
-}
-.card-drop-chance {
+.card-upgrade-gold-needed {
     font-weight: bold;
-    color: #777; /* Darker color for drop chance */
+    color: #000000; 
 }

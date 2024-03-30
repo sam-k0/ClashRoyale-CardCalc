@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Webpage</title>
+    <title>CR Cards Calculator</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
+    <h1 class="page-header">Clash Royale Card Upgrade Calculator</h1>
     <form action="/process" method="POST">
-        <label for="user_input">Enter a string:</label><br>
+        <label for="user_input">Player tag (without hashtag):</label><br>
         <input type="text" id="user_input" name="user_input"><br>
 
-        <label for="targetlevel">Target Levels</label><br>
+        <label for="targetlevel">Calculate needed cards for level:</label><br>
         <select id="targetlevel" name="targetlevel">
             <option value="1">Level 1</option>
             <option value="2">Level 2</option>
@@ -31,5 +32,10 @@
 
         <input type="submit" value="Submit">
     </form>
+    <p class="information-text">
+        This tool allows you to easily calculate how many cards and gold you need to upgrade a card to a specific level.
+        Simply enter your player tag and the target level you want to reach and the tool will do the rest.
+        If an error occurs, please make sure you did not confuse the letter "O" with the number "0" zero.
+    </p>
 </body>
 </html>
