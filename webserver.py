@@ -19,13 +19,17 @@ def process():
     for card in cards:
         missingCards = card.get_required_upgrade_cards(card.get("level"), int(targetlevel), card.get("count"), card.get("rarity"))
         missingGold = card.get_required_upgrade_cost(card.get("level"), int(targetlevel), 0, card.get("rarity"))
+        imgpath = "res/"+card.name+".png"
+        
         cards_parsed.append(
             {"name":card.get("name"),
              "rarity":card.get("rarity"),
              "level":card.get("level"),
              "count":card.get("count"),
              "missingCards":missingCards,
-             "missingGold":missingGold})
+             "missingGold":missingGold,
+             "image_path": imgpath
+             })
 
     return render_template('cards.html', cards=cards_parsed, targetlevel=targetlevel)
 

@@ -12,6 +12,7 @@
         <p>Required cards to reach level {{targetlevel}}</p>
         <ul>
             {% for card in cards %}
+            <img src="{{ url_for('static', filename=card['image_path']) }}" alt="Card Image" class="card-image">
             <div class="card">
                 <p class="card-name">{{ card['name'] }}</p>
                 <p class="card-level">Level: {{ card['level'] }}</p>

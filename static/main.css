@@ -74,6 +74,10 @@ input[type="submit"]:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.card-image {
+    margin-right: 10px; /* Add margin to separate image from text */
+}
+
 .card-name {
     font-weight: bold;
     color: #333; /* Dark color for card name */
