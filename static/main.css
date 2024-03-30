@@ -1,0 +1,97 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 25%; /* Set width to 25% of the page */
+    max-width: 300px; /* Limit maximum width */
+    padding: 10px;
+    margin: 0 auto; /* Center the text box */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+select {
+    width: 25%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px; /* Add margin-bottom to create space */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.card {
+    display: flex;
+    flex-direction: row; /* Stack child elements horizontally */
+    justify-content: space-between; /* Distribute child elements evenly along the main axis */
+    align-items: center; /* Center child elements vertically */
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-name {
+    font-weight: bold;
+    color: #333; /* Dark color for card name */
+    margin-right: 10px; /* Add right margin to create spacing */
+}
+
+.card-level {
+    font-style: italic;
+    color: #888; /* Lighter color for card level */
+    margin-right: 10%; /* Add right margin to create spacing */
+}
+
+.card-description {
+    color: #555; /* Color for card description */
+    flex: 1; /* Expand to fill remaining space */
+}
+
+.card-rarity {
+    color: #ff9800; /* Orange color for card rarity */
+    font-style: italic; /* Optionally apply italic style to rarity */
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Names</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Card Names</h1>
+        <p>Required cards to reach level {{targetlevel}}</p>
+        <ul>
+            {% for card in cards %}
+            <div class="card">
+                <p class="card-name">{{ card['name'] }}</p>
+                <p class="card-level">Level: {{ card['level'] }}</p>
+                <p class="card-rarity">Rarity: {{ card['rarity'] }}</p>
+                <!-- Add more properties as needed -->
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
