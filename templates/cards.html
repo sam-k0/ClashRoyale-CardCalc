@@ -8,9 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>Player: {{ playerName }}</h1>
-        <p>Required cards to reach level {{targetlevel}}</p>
-        <ul>
+        <div class="playerinfo">
+            <p>Player: {{ playerInfo['name'] }}</p>
+            <p>Clan: {{ playerInfo['clan'] }}</p>
+            <p>Battles: {{ playerInfo['battles'] }}</p>
+            <p>Wins: {{ playerInfo['wins'] }}</p>
+            <p>Trophies: {{ playerInfo['trophies']}}</p>
+        </div>
+        
+        <p style="font-family: 'Courier New', Courier, monospace; font-style: italic;">Card target level: {{targetlevel}}</p>
+        <label for="filter-select">Filter by Rarity:</label>
+        <select id="filter-select">
+            <option value="all">All</option>
+            <option value="common">Common</option>
+            <option value="rare">Rare</option>
+            <option value="epic">Epic</option>
+            <option value="legendary">Legendary</option>
+            <option value="champion">Champion</option>
+        </select>       
+        <ul id="card-list">
             {% for card in cards %}
             <li class="card">
                     <div class="card-image-container">
@@ -25,11 +41,13 @@
                         <div class="card-details-element">
                             <p class="card-upgrade-cards-needed">Cards needed: {{ card['missingCards'] }}</p>
                             <p class="card-upgrade-gold-needed">Gold needed: {{ card['missingGold'] }}</p>
+                            <p class="card-upgrade-max-level">Max. current level: {{ card['maxUpgradeLevel']}}</p>
                         </div>
                     </div>
                 </li>
             {% endfor %}
         </ul>
     </div>
+    <script src="cards.js"></script>
 </body>
 </html>

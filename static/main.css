@@ -139,3 +139,14 @@ input[type="submit"]:hover {
     font-weight: bold;
     color: #000000; 
 }
+
+.playerinfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.playerinfo p {
+    font-size: large;
+}

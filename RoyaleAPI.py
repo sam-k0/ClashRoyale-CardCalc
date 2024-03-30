@@ -33,9 +33,61 @@ class Card():
         self.iconUrls = responseDict.get("iconUrls")
         self.id = responseDict.get("id")
         self.imageUrls = responseDict.get("imageUrls")
-    
+        self.level_normalized = responseDict.get("level") + self.__get_rarity_level_offset()    
     def get(self, key: str) -> any:
         return self.data.get(key)
+
+    def __get_rarity_level_offset(self):
+        rarity = self.rarity
+        rarityStart = 0
+        if rarity == RARITY_COMMON:
+            rarityStart = 0
+        elif rarity == RARITY_RARE:
+            rarityStart = 2
+        elif rarity == RARITY_EPIC:
+            rarityStart = 5
+        elif rarity == RARITY_LEGENDARY:
+            rarityStart = 8
+        elif rarity == RARITY_CHAMP:
+            rarityStart = 10
+        else:
+            raise ValueError("Invalid rarity")
+        return rarityStart
+        
+    def __get_upgrade_cost_array(self)->list:
+        rarity = self.rarity
+        upgradeCost = []
+        if rarity == RARITY_COMMON:
+            upgradeCost = COMMON_CARDS_UPGRADE_COST
+        elif rarity == RARITY_RARE:
+            upgradeCost = RARE_CARDS_UPGRADE_COST
+        elif rarity == RARITY_EPIC:
+            upgradeCost = EPIC_CARDS_UPGRADE_COST
+        elif rarity == RARITY_LEGENDARY:
+            upgradeCost = LEGENDARY_CARDS_UPGRADE_COST
+        elif rarity == RARITY_CHAMP:
+            upgradeCost = CHAMP_CARDS_UPGRADE_COST
+        else:
+            raise ValueError("Invalid rarity")
+        return upgradeCost
+    
+    def __get_upgrade_card_num_array(self)->list:
+        upgradeNum = []
+        rarity = self.rarity
+        if rarity == RARITY_COMMON:
+            upgradeNum = COMMON_CARDS_UPGRADE_NUM
+        elif rarity == RARITY_RARE:
+            upgradeNum = RARE_CARDS_UPGRADE_NUM
+        elif rarity == RARITY_EPIC:
+            upgradeNum = EPIC_CARDS_UPGRADE_NUM
+        elif rarity == RARITY_LEGENDARY:
+            upgradeNum = LEGENDARY_CARDS_UPGRADE_NUM
+        elif rarity == RARITY_CHAMP:
+            upgradeNum = CHAMP_CARDS_UPGRADE_NUM
+        else:
+            raise ValueError("Invalid rarity")
+        return upgradeNum
+
     # methods to calculate missing cards until a certain level
     def get_required_upgrade_cards(self, currentLevel:int, targetLevel:int, currentCount:int, rarity:str) -> int:
         # Get the correct array of upgrade numbers
@@ -105,7 +157,32 @@ class Card():
         missingCost -= currentGold
         return missingCost
 
+    def get_max_possible_upgrade_level(self):
+        # calculate using information from the API,
+        # as we have the current level and the count of the card and also the rarity
+        rarityStart = self.__get_rarity_level_offset()
+        upgradeCards = self.__get_upgrade_card_num_array()
         
+        # calculate the max level
+        maxLevel = 0
+        totalCards = 0
+        # sum up all cards that are theoretically there due to the level
+        for i in range(0, rarityStart+self.level):
+            totalCards += upgradeCards[i]
+
+        # add the current cards
+        totalCards += self.count
+        
+        # Subtract cards until < 0
+        for i in range(0,14):
+            totalCards -= upgradeCards[i]
+            if totalCards < 0:
+                break
+            maxLevel += 1
+
+        return maxLevel
+    
+
 
 
 class Player():
@@ -140,4 +217,6 @@ class Session():
         
     def get_player(self, tag: str) -> Player:
         get_player_raw = self.get_player_raw(tag)
+        if "reason" in get_player_raw.keys():
+            raise RuntimeError("Player not found")
         return Player(get_player_raw)
