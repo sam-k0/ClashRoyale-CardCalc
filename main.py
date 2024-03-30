@@ -1,16 +1,15 @@
+# Download all card images from the API
 import requests
 import RoyaleAPI
 
 session = RoyaleAPI.Session()
 
-player = session.get_player("8JR9Y8YU")
-
-# print all cards rarity and count
+player = session.get_player("PlayerTag")
 card: RoyaleAPI.Card
 
 for card in player.get_cards():
-    # calculate missing cards to level 14
-    if card.name == "Executioner":
-        print(card.get_max_possible_upgrade_level())
+    # download card image
+    with open("res/"+card.get("name")+".png", "wb") as f:
+        f.write(requests.get(card.get("iconUrls")["medium"]).content)
 
 
