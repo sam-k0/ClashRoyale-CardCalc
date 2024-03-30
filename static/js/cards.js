@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (rarity === 'all' || cardRarity === rarity) {
                 console.log('show');
-                cardItem.style.display = 'block'; // Show card
+                cardItem.style.display = 'flex'; // Show card
             } else {
                 console.log('hide');
                 cardItem.style.display = 'none'; // Hide card
