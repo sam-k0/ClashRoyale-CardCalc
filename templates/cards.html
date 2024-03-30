@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Names</title>
+    <title>CR Card Upgrade Calculator</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
@@ -20,11 +20,11 @@
         <label for="filter-select">Filter by Rarity:</label>
         <select id="filter-select">
             <option value="all">All</option>
-            <option value="common">Common</option>
-            <option value="rare">Rare</option>
-            <option value="epic">Epic</option>
-            <option value="legendary">Legendary</option>
-            <option value="champion">Champion</option>
+            <option value="rarity: common">Common</option>
+            <option value="rarity: rare">Rare</option>
+            <option value="rarity: epic">Epic</option>
+            <option value="rarity: legendary">Legendary</option>
+            <option value="rarity: champion">Champion</option>
         </select>       
         <ul id="card-list">
             {% for card in cards %}
@@ -48,6 +48,6 @@
             {% endfor %}
         </ul>
     </div>
-    <script src="cards.js"></script>
+    <script src="{{ url_for('static', filename='js/cards.js')}}"></script>
 </body>
 </html>

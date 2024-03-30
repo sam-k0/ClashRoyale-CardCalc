@@ -85,6 +85,8 @@ input[type="submit"]:hover {
 }
 .card {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center; /* Center vertically */
     background-color: #f9f9f9;
     padding: 10px;
@@ -109,7 +111,6 @@ input[type="submit"]:hover {
 .card-details {
     flex: 1; /* Expand to fill remaining space */
     padding-left: 10px; /* Add padding to separate from image */
-    margin-right: 50%;
     display: flex; /* Use flexbox */
     flex-direction: row; /* Stack child elements */
     align-items: center; /* Center child elements vertically */
