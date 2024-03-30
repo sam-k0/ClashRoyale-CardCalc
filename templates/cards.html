@@ -12,13 +12,25 @@
         <p>Required cards to reach level {{targetlevel}}</p>
         <ul>
             {% for card in cards %}
-            <img src="{{ url_for('static', filename=card['image_path']) }}" alt="Card Image" class="card-image">
-            <div class="card">
-                <p class="card-name">{{ card['name'] }}</p>
-                <p class="card-level">Level: {{ card['level'] }}</p>
-                <p class="card-rarity">Rarity: {{ card['rarity'] }}</p>
-                <!-- Add more properties as needed -->
-            </div>
+            <li class="card">
+                    <div class="card-image-container">
+                        <img src="{{ url_for('static', filename=card['image_path']) }}" alt="Card Image" class="card-image">
+                    </div>
+                    <div class="card-details">
+                        <p class="card-name">{{ card['name'] }}</p>
+                        <p class="card-level">Level: {{ card['level'] }}</p>
+                        <p class="card-description">{{ card['description'] }}</p>
+                        <p class="card-rarity">Rarity: {{ card['rarity'] }}</p>
+                        <ul class="card-description-list">
+                            <li class="card-description-item">
+                                Needed cards: {{ card['missingCards'] }}
+                            </li>
+                            <li class="card-description-item">
+                                Missing gold: {{ card['missingGold'] }}
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             {% endfor %}
         </ul>
     </div>

@@ -62,40 +62,57 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+.container {
+    margin-top: 20px;
+}
+.card-list {
+    list-style-type: none;
+    padding: 0;
+}
 .card {
     display: flex;
-    flex-direction: row; /* Stack child elements horizontally */
-    justify-content: space-between; /* Distribute child elements evenly along the main axis */
-    align-items: center; /* Center child elements vertically */
+    align-items: center; /* Center vertically */
     background-color: #f9f9f9;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.card-image {
-    margin-right: 10px; /* Add margin to separate image from text */
+.card-image-container {
+    width: 10%; /* Set width of image container */
 }
-
+.card-image {
+    width: 100%; /* Set image width to fill container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper alignment */
+}
+.card-details {
+    flex: 1; /* Expand to fill remaining space */
+}
 .card-name {
     font-weight: bold;
     color: #333; /* Dark color for card name */
-    margin-right: 10px; /* Add right margin to create spacing */
 }
-
 .card-level {
     font-style: italic;
     color: #888; /* Lighter color for card level */
-    margin-right: 10%; /* Add right margin to create spacing */
 }
-
 .card-description {
     color: #555; /* Color for card description */
-    flex: 1; /* Expand to fill remaining space */
 }
-
 .card-rarity {
     color: #ff9800; /* Orange color for card rarity */
-    font-style: italic; /* Optionally apply italic style to rarity */
+}
+
+.card-description-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+.card-description-item {
+    margin-bottom: 5px; /* Add margin between items */
+    color: #555; /* Color for card description */
+}
+.card-drop-chance {
+    font-weight: bold;
+    color: #777; /* Darker color for drop chance */
 }
