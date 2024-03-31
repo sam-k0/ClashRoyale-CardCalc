@@ -27,7 +27,9 @@
             <option value="rarity: epic">Epic</option>
             <option value="rarity: legendary">Legendary</option>
             <option value="rarity: champion">Champion</option>
-        </select>       
+        </select>    
+        <input type="text" id="search-text-filter" placeholder="Search for cards..">
+        
         <ul id="card-list">
             {% for card in cards %}
             <li class="card">
