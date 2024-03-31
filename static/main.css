@@ -112,10 +112,10 @@ input[type="submit"]:hover {
     flex: 1; /* Expand to fill remaining space */
     padding-left: 10px; /* Add padding to separate from image */
     display: flex; /* Use flexbox */
-    margin-right: 50%; /* Add margin to separate from buttons */
+    margin-right: 10%; /* Add margin to separate from buttons */
     flex-direction: row; /* Stack child elements */
     align-items: center; /* Center child elements vertically */
-    justify-content: space-between; /* Distribute space between elements */
+    justify-content:space-around;
 }
 
 .card-details-element {

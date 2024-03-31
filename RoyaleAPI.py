@@ -26,6 +26,8 @@ class Card():
         self.name = responseDict.get("name")
         self.level = responseDict.get("level")
         self.starLevel = responseDict.get("starLevel")
+        if self.starLevel == None:
+            self.starLevel = 0
         self.maxLevel = responseDict.get("maxLevel")
         self.rarity = responseDict.get("rarity")
         self.count = responseDict.get("count")

@@ -52,7 +52,8 @@ def process():
              "image_path": imgpath,
              "rarityColor": rarityColor,
              "maxUpgradeLevel":maxUpgradeLevel,
-             "remainingCards":remainingCards
+             "remainingCards":remainingCards,
+             "starLevel":card.starLevel
              })
 
     clan = "*no clan*"
