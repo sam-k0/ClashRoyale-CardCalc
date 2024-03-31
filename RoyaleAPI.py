@@ -163,13 +163,19 @@ class Card():
         rarityStart = self.__get_rarity_level_offset()
         upgradeCards = self.__get_upgrade_card_num_array()
         
+        if self.level_normalized >= 14:
+            return self.level_normalized, 0
+        
         # calculate the max level
         maxLevel = 0
         totalCards = 0
+
+        print("calculating ", self.name, self.level_normalized, self.count, self.rarity)
         # sum up all cards that are theoretically there due to the level
-        for i in range(0, rarityStart+self.level):
+        for i in range(0, self.level_normalized):
             totalCards += upgradeCards[i]
 
+        print(self.name , totalCards)
         # add the current cards
         totalCards += self.count
         
