@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
+    
     <div class="container">
+        <h1 class="page-header">Clash Royale Card Upgrade Calculator</h1>
         <div class="playerinfo">
             <p>Player: {{ playerInfo['name'] }}</p>
             <p>Clan: {{ playerInfo['clan'] }}</p>
@@ -42,6 +44,9 @@
                             <p class="card-upgrade-cards-needed">Cards needed: {{ card['missingCards'] }}</p>
                             <p class="card-upgrade-gold-needed">Gold needed: {{ card['missingGold'] }}</p>
                             <p class="card-upgrade-max-level">Max. current level: {{ card['maxUpgradeLevel']}} ({{card['remainingCards']}} left) </p>
+                        </div>
+                        <div class="card-details-element">
+                            <p class="card-starlevel">Star level: {{ card['starLevel'] }}</p>
                         </div>
                     </div>
                 </li>

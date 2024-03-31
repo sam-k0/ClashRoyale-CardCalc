@@ -7,7 +7,7 @@
 /* Center the information text */
 .information-text {
     text-align: center;
-    max-width: 50%;
+    max-width: 75%;
     margin: 0 auto;
     margin-top: 5%;
     font-size: large;
@@ -137,6 +137,12 @@ input[type="submit"]:hover {
 .card-upgrade-cards-needed {
     color: #000000; /* Color for card description */
 }
+
+.card-starlevel {
+    font-weight: bold;
+    color: #ffb700; 
+}
+
 .card-upgrade-gold-needed {
     font-weight: bold;
     color: #000000; 
