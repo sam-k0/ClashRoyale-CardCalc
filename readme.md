@@ -5,13 +5,14 @@ Simply enter your player tag and the target level you want to reach and the tool
 You can also filter by card rarity to find cards easier.
 
 
-![image](https://raw.githubusercontent.com/sam-k0/ClashRoyale-py/master/readme/img.png?token=GHSAT0AAAAAACQJFACQGZCQASW5FSEGPSDGZQIESJQ)
+![image](readme/img.png)
 
-![image](https://raw.githubusercontent.com/sam-k0/ClashRoyale-py/master/readme/img1.png?token=GHSAT0AAAAAACQJFACR327GFIT24UZCJJCQZQIETLA)
+![image](readme/img1.png)
 
 # Requirements
 - flask
 - requests
 
+# Setup
 - Supercell API token in "token.txt" file in the root directory
-- Card image files in the format *Troop Name*.png, best way to obtain them is by downloading them using `main.py`
+- Card image files in the format *Card Name*.png, best way to obtain them is by downloading them using `setup.py`
